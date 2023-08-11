@@ -1,4 +1,4 @@
-1. What is TypeScript, and how is it different from JavaScript?
+## What is TypeScript, and how is it different from JavaScript?
 
 TypeScript is an extension of JavaScript that adds:
 
