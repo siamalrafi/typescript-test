@@ -103,3 +103,57 @@ let playerDirection: Direction = Direction.Right;
 if (playerDirection === Direction.Up) console.log("Up");
 else if (playerDirection === Direction.Right) console.log("Right");
 ```
+
+## What is the "as" keyword used for in TypeScript?
+
+The `as` keyword in TypeScript is used for type assertions. It tells the compiler that you're sure about the type of a value. Use it like this:
+
+```typescript
+let value: any = "Hello, TypeScript!";
+let length: number = (value as string).length;
+```
+
+Remember, it's a way to override type inference, but be careful to ensure your assertion is correct.
+
+## Can you explain how to use "type guards" with "in" and "typeof" operators in TypeScript?
+
+Certainly, here's a concise explanation:
+
+1. **Using `in` Operator:**
+   The `in` operator checks if a property exists in an object. It helps narrow down types based on properties.
+
+```typescript
+interface Car {
+   brand: string;
+   model: string;
+}
+
+function displayCarInfo(vehicle: Car | string) {
+   if ("brand" in vehicle && "model" in vehicle) {
+      console.log(vehicle.brand, vehicle.model);
+   } else {
+      console.log("Invalid car:", vehicle);
+   }
+}
+
+displayCarInfo({ brand: "Toyota", model: "Corolla" });
+displayCarInfo("Not a car");
+```
+
+2. **Using `typeof` Operator:**
+   The `typeof` operator checks the type of a value, useful for type guards with primitive types.
+
+```typescript
+function printLength(value: string | number) {
+   if (typeof value === "string") {
+      console.log("Length:", value.length);
+   } else {
+      console.log("Value is a number:", value);
+   }
+}
+
+printLength("hello");
+printLength(42);
+```
+
+These type guards help TypeScript make smarter type inferences and ensure safer code.
