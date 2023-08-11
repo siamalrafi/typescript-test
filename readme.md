@@ -35,13 +35,13 @@ Both are useful, but interfaces are typically for objects and contracts, while t
 
 generics in TypeScript to create a function that can work with any type of data
 
-``function printData<T>(data: T) {
+```function printData<T>(data: T) {
 console.log(data);
 }
 
 printData<number>(10); // Prints 10
 printData<string>("Hello, world!"); // Prints "Hello, world!"
-``
+```
 
 generics in TypeScript to create a class that can work with any type of data
 
@@ -60,4 +60,46 @@ const teacher = new UserData<number>(5, "Mr. Smith");
 
 console.log(student); // UserData { name: "John Doe", rollNo: "12345" }
 console.log(teacher); // UserData { name: "Mr. Smith", rollNo: 5 }
+```
+
+## What is the difference between an "unknown" and "any" type in TypeScript?
+
+Here are the differences between TypeScript "unknown" and "any" type ---
+
+-  **"unknown" type:** Safer alternative to "any". Requires type checks and narrowing before operations. Provides better type safety.
+
+-  **"any" type:** Bypasses TypeScript's type checking. Allows any operations without type errors. Sacrifices type safety.
+
+## Can you give an example of how to use enums in TypeScript?
+
+Here are the example of enums in TypeScript ---
+
+```
+enum Color {
+  Red,
+  Green,
+  Blue,
+}
+
+let bgColor: Color = Color.Blue;
+
+if (bgColor === Color.Red) console.log("Red");
+else if (bgColor === Color.Green) console.log("Green");
+else if (bgColor === Color.Blue) console.log("Blue");
+```
+
+Uses -----
+
+```
+enum Direction {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT",
+}
+
+let playerDirection: Direction = Direction.Right;
+
+if (playerDirection === Direction.Up) console.log("Up");
+else if (playerDirection === Direction.Right) console.log("Right");
 ```
