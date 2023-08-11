@@ -1,4 +1,4 @@
-interface Person {
+/* interface Person {
    name: string;
    age: number;
 }
@@ -18,3 +18,4 @@ const people: Person[] = [
 
 const adults = filterAdults(people);
 console.log(filterAdults(people));
+ */
