@@ -45,7 +45,7 @@ printData<string>("Hello, world!"); // Prints "Hello, world!"
 
 generics in TypeScript to create a class that can work with any type of data
 
-`class UserData<T> {
+```class UserData<T> {
 name: string;
 rollNo: T;
 
@@ -60,4 +60,4 @@ const teacher = new UserData<number>(5, "Mr. Smith");
 
 console.log(student); // UserData { name: "John Doe", rollNo: "12345" }
 console.log(teacher); // UserData { name: "Mr. Smith", rollNo: 5 }
-`
+```
